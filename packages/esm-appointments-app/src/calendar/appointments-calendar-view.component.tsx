@@ -21,9 +21,7 @@ const AppointmentsCalendarView: React.FC = () => {
     <div data-testid="appointments-calendar">
       <AppointmentsHeader title={t('calendar', 'Calendar')} />
       <CalendarHeader currentView={currentView} onViewChange={setCurrentView} />
-      {currentView === 'monthly' && (
-        <MonthlyCalendarView events={calendarEvents} onAppointmentClick={setSelectedAppointmentUuid} />
-      )}
+      {currentView === 'monthly' && <MonthlyCalendarView events={calendarEvents} />}
     </div>
   );
 };
