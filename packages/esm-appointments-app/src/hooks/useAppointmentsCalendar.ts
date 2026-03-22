@@ -13,7 +13,7 @@ interface AppointmentSummaryResponse {
     name: string;
     uuid: string;
   };
-  appointmentCountMap: Map<string, AppointmentCountMapEntry>;
+  appointmentCountMap: Record<string, AppointmentCountMapEntry>;
 }
 
 export const useAppointmentsCalendar = (forDate: string, period: string) => {
@@ -65,4 +65,5 @@ function evaluateAppointmentCalendarDates(forDate: string, period: string) {
       endDate: dayjs(forDate).endOf('month').format(omrsDateFormat),
     };
   }
+  throw new Error(`Unknown period: ${period}`);
 }
