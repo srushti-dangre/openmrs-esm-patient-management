@@ -44,7 +44,7 @@ const CalendarHeader: React.FC<CalendarHeaderProps> = ({ currentView, onViewChan
       </div>
       <ContentSwitcher
         selectedIndex={views.findIndex((v) => v.key === currentView)}
-        onChange={({ name }) => onViewChange(name as CalendarView)}>
+        onChange={(e: any) => onViewChange(e.name as CalendarView)}>
         {views.map(({ key, label }) => (
           <Switch key={key} name={key} text={label} />
         ))}
